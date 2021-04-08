@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using System.Windows;
+using WPFUI.ViewModels;
 
 namespace WPFUI
 {
