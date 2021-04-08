@@ -31,13 +31,20 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <TextBlock 
-            Text="{Binding Path=FirstName, Mode=OneWay}" 
+            x:Name="FullName" 
             Grid.Row="1" 
-            Grid.Column="1" />
+            Grid.Column="1"
+            Grid.ColumnSpan="2"/>
         <TextBox 
             x:Name="FirstName" 
             MinWidth="100"
             Grid.Row="2" 
             Grid.Column="1"></TextBox>
+
+        <TextBox 
+            x:Name="LastName" 
+            MinWidth="100"
+            Grid.Row="2" 
+            Grid.Column="2"></TextBox>
     </Grid>
 </Window>
