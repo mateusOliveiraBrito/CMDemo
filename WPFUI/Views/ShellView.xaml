@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:WPFUI.Views"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
         FontSize="20"
         Title="ShellView" Height="500" Width="400">
     <Grid>
@@ -30,13 +29,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock
             Text="{Binding Path=FullName, Mode=OneWay}"
             Grid.Row="1" 
             Grid.Column="1"
             Grid.ColumnSpan="2"/>
-        
+
         <TextBox 
             x:Name="FirstName" 
             MinWidth="100"
@@ -65,5 +64,22 @@
             Grid.Row="4"
             Grid.Column="1"
             x:Name="ClearText">Clear Text</Button>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            x:Name="LoadPageOne">Page One</Button>
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            x:Name="LoadPageTwo">Page Two</Button>
+
+        <ContentControl 
+            Grid.Row="6"
+            Grid.Column="1"
+            Grid.ColumnSpan="5"
+            x:Name="ActiveItem"/>
+
     </Grid>
 </Window>

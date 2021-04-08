@@ -1,9 +1,10 @@
 ﻿using Caliburn.Micro;
 using WPFUI.Models;
+using WPFUI.Views;
 
 namespace WPFUI.ViewModels
 {
-    public class ShellViewModel : Screen
+    public class ShellViewModel : Conductor<object>
     {
         private string _firstName;
         private string _lastName;
@@ -91,6 +92,16 @@ namespace WPFUI.ViewModels
             NotifyOfPropertyChange(() => FirstName);
             NotifyOfPropertyChange(() => LastName);
             NotifyOfPropertyChange(() => PeopleSelected);
+        }
+
+        public void LoadPageOne()
+        {
+            ActivateItem(new FirstChildViewModel());
+        }
+
+        public void LoadPageTwo()
+        {
+            ActivateItem(new SecondChildViewModel());
         }
     }
 }
