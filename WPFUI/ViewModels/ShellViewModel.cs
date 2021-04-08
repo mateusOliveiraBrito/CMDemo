@@ -5,8 +5,8 @@ namespace WPFUI.ViewModels
 {
     public class ShellViewModel : Screen
     {
-        private string _firstName = "Mateus";
-        private string _lastName = "Oliveira Brito";
+        private string _firstName;
+        private string _lastName;
         private BindableCollection<PersonModel> _people;
         private PersonModel _peopleSelected;
 
@@ -68,8 +68,29 @@ namespace WPFUI.ViewModels
             {
                 _peopleSelected = value;
                 NotifyOfPropertyChange(() => PeopleSelected);
+
+                if (PeopleSelected != null)
+                {
+                    FirstName = PeopleSelected.Name;
+                    LastName = PeopleSelected.LastName;
+
+                    NotifyOfPropertyChange(() => FirstName);
+                    NotifyOfPropertyChange(() => LastName);
+                }
             }
         }
 
+        public bool CanClearText(string firstName, string lastName) => !string.IsNullOrWhiteSpace(firstName) || !string.IsNullOrWhiteSpace(lastName);
+
+        public void ClearText(string firstName, string lastName)
+        {
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            PeopleSelected = null;
+
+            NotifyOfPropertyChange(() => FirstName);
+            NotifyOfPropertyChange(() => LastName);
+            NotifyOfPropertyChange(() => PeopleSelected);
+        }
     }
 }

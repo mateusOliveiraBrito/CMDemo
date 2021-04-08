@@ -60,5 +60,10 @@
             Grid.Row="3"
             Grid.Column="2"
             x:Name="PeopleSelected_LastName"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            x:Name="ClearText">Clear Text</Button>
     </Grid>
 </Window>
