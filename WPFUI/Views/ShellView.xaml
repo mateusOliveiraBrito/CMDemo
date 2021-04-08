@@ -30,11 +30,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock 
-            x:Name="FullName" 
+        
+        <TextBlock
+            Text="{Binding Path=FullName, Mode=OneWay}"
             Grid.Row="1" 
             Grid.Column="1"
             Grid.ColumnSpan="2"/>
+        
         <TextBox 
             x:Name="FirstName" 
             MinWidth="100"
@@ -46,5 +48,17 @@
             MinWidth="100"
             Grid.Row="2" 
             Grid.Column="2"></TextBox>
+
+        <ComboBox 
+            Grid.Row="3"
+            Grid.Column="1"
+            x:Name="People"
+            SelectedItem="{Binding Path=PeopleSelected, Mode=OneWayToSource}"
+            DisplayMemberPath="Name"/>
+
+        <TextBlock 
+            Grid.Row="3"
+            Grid.Column="2"
+            x:Name="PeopleSelected_LastName"/>
     </Grid>
 </Window>
