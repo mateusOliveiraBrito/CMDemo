@@ -4,7 +4,7 @@ namespace WPFUI.ViewModels
 {
     public class ShellViewModel : Screen
     {
-        private string _firstName;
+        private string _firstName = "Mateus";
 
         public string FirstName
         {
